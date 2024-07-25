@@ -1,0 +1,35 @@
+Table "Users" {
+  "user_id" SERIAL [pk, increment]
+  "email" VARCHAR(255) [unique]
+  "nickname" VARCHAR(255) [unique]
+  "password" VARCHAR(255) [not null]
+  "ballance" INTEGER [default: 0]
+  "avatarSrc" VARCHAR(255)
+  "rank" INTEGER
+  "verified" BOOLEAN [default: false]
+  "deactivated" BOOLEAN [default: false]
+  "created_at" TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+  "updated_at" TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+}
+
+Table "Topups" {
+  "topup_id" SERIAL [pk, increment]
+  "user_id" INTEGER
+  "amount" INTEGER
+  "status" VARCHAR(255)
+  "created_at" TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+  "updated_at" TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+}
+
+Table "Withdraws" {
+  "withdraw_id" SERIAL [pk, increment]
+  "user_id" INTEGER
+  "amount" INTEGER
+  "status" VARCHAR(255)
+  "created_at" TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+  "updated_at" TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+}
+
+Ref:"Users"."user_id" < "Topups"."user_id"
+
+Ref:"Users"."user_id" < "Withdraws"."user_id"

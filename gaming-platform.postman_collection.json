@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "2db4b252-a4c0-4b67-a6f1-7d642fa0d03f",
+		"name": "gaming-platform",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "3829017"
+	},
+	"item": [
+		{
+			"name": "No auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test1@mail.me\",\n    \"password\": \"asdasd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{HOST}}:{{PORT}}/user/login"
+					},
+					"response": [
+						{
+							"name": "Success Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"test@mail.me\",\n    \"password\": \"asdasd\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{HOST}}:{{PORT}}/login"
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Sign-Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@mail.me\",\n    \"password\": \"asdasd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{HOST}}:{{PORT}}/sign-up"
+					},
+					"response": [
+						{
+							"name": "Success Signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"test@mail.me\",\n    \"password\": \"asdasd\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{HOST}}:{{PORT}}/sign-up"
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6InRlc3RAbWFpbC5tZSIsImlhdCI6MTcyMTgyMzE3MSwiZXhwIjoxNzIzMDMyNzcxfQ.Apa8yzyMK1pPFyBHZ7At3Jcc0fKD-MFdEdwxtN_vhzU",
+								"type": "text"
+							}
+						],
+						"url": "{{HOST}}:{{PORT}}/user/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{HOST}}:{{PORT}}/user/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6InRlc3RAbWFpbC5tZSIsImlhdCI6MTcyMTgyMzE3MSwiZXhwIjoxNzIzMDMyNzcxfQ.Apa8yzyMK1pPFyBHZ7At3Jcc0fKD-MFdEdwxtN_vhzU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nickname\": \"updated-nickname-v2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{HOST}}:{{PORT}}/user/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Top-Up",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo5LCJlbWFpbCI6InRlc3QzQG1haWwubWUiLCJkZWFjdGl2YXRlZCI6ZmFsc2UsImlhdCI6MTcyMTg5Njk3MiwiZXhwIjoxNzIzMTA2NTcyfQ.fYZgrlTy2VXp1xmtnhZfN3Jy74u4goO2Boyvfeyq2vI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 1000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{HOST}}:{{PORT}}/user/top-up"
+					},
+					"response": []
+				},
+				{
+					"name": "Withdraw",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo5LCJlbWFpbCI6InRlc3QzQG1haWwubWUiLCJkZWFjdGl2YXRlZCI6ZmFsc2UsImlhdCI6MTcyMTg5Njk3MiwiZXhwIjoxNzIzMTA2NTcyfQ.fYZgrlTy2VXp1xmtnhZfN3Jy74u4goO2Boyvfeyq2vI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": -5000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{HOST}}:{{PORT}}/user/withdraw"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Internal",
+			"item": [
+				{
+					"name": "Deactivate Account",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "b901a32a17d41065a6cb2d108d92a510562e9dab64e7e0d4a4e87d5f82fcbdc1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@mail.me\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{HOST}}:{{PORT}}/user/internal/deactivate-account"
+					},
+					"response": []
+				},
+				{
+					"name": "Activate Account",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "b901a32a17d41065a6cb2d108d92a510562e9dab64e7e0d4a4e87d5f82fcbdc1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@mail.me\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{HOST}}:{{PORT}}/user/internal/activate-account"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Account",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "b901a32a17d41065a6cb2d108d92a510562e9dab64e7e0d4a4e87d5f82fcbdc1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@mail.me\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{HOST}}:{{PORT}}/user/internal/verify-account"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

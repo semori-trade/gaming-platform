@@ -31,18 +31,18 @@ pnpm run dev
 
 ### Routes
 
-POST /user/login
-POST /user/sign-up
-POST /user/logout
+- POST /user/login
+- POST /user/sign-up
+- POST /user/logout
 
-GET /user/profile
-PUT /user/profile
-POST /user/top-up
-POST /user/withdraw
+- GET /user/profile
+- PUT /user/profile
+- POST /user/top-up
+- POST /user/withdraw
 
-PUT /user/internal/deactivate-account
-PUT /user/internal/activate-account
-PUT /user/internal/verify-account
+- PUT /user/internal/deactivate-account
+- PUT /user/internal/activate-account
+- PUT /user/internal/verify-account
 
 ## Database
 

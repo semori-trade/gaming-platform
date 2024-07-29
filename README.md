@@ -96,8 +96,8 @@ POST /user/withdraw
 PUT /user/internal/deactivate-account
 1. Set the user as deactivated by email. If the user tries to log in again, they will get a 401 status code and a message indicating that the user is deactivated. We cannot change the deactivation status for the user immediately because we do not store the JWT in the cache.
 
-2. PUT /user/internal/activate-account
-Set the user as active by email. If the user tries to log in again, they will be able to use public endpoints. We cannot change the deactivation status for the user immediately because we do not store the JWT in the cache.
+PUT /user/internal/activate-account
+1. Set the user as active by email. If the user tries to log in again, they will be able to use public endpoints. We cannot change the deactivation status for the user immediately because we do not store the JWT in the cache.
 
 PUT /user/internal/verify-account
-3. Set the user as verified by email. Verified users can withdraw money from the system. We cannot change the verification status for the user immediately because we do not store the JWT in the cache.
+1. Set the user as verified by email. Verified users can withdraw money from the system. We cannot change the verification status for the user immediately because we do not store the JWT in the cache.
